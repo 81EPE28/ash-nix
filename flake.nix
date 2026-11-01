@@ -7,7 +7,7 @@
     let
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forEachSystem = nixpkgs.lib.genAttrs supportedSystems;
-    packages = forEachSystem (system:
+      packages = forEachSystem (system:
         let
           pkgs = import nixpkgs { inherit system; };
         in
